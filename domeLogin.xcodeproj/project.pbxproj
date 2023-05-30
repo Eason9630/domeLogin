@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48723A3DEF0FB894A0390110 /* Pods_domeLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D5E35CA865EC01D19FC457 /* Pods_domeLogin.framework */; };
+		E90E6ABF2A20992A009F008D /* FirebaseLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E6ABE2A20992A009F008D /* FirebaseLoginViewController.swift */; };
+		E90E6AC12A20A6F4009F008D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E6AC02A20A6F4009F008D /* Login.swift */; };
+		E90E6AC32A20ABDA009F008D /* Alert + ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E6AC22A20ABDA009F008D /* Alert + ViewController.swift */; };
+		E90E6AC62A219D7E009F008D /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E90E6AC52A219D7E009F008D /* FacebookLogin */; };
 		E93528D82A1D022900823DF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93528D72A1D022900823DF3 /* AppDelegate.swift */; };
 		E93528DA2A1D022900823DF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93528D92A1D022900823DF3 /* SceneDelegate.swift */; };
-		E93528DC2A1D022900823DF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93528DB2A1D022900823DF3 /* ViewController.swift */; };
 		E93528DF2A1D022900823DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93528DD2A1D022900823DF3 /* Main.storyboard */; };
 		E93528E12A1D022A00823DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93528E02A1D022A00823DF3 /* Assets.xcassets */; };
 		E93528E42A1D022A00823DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93528E22A1D022A00823DF3 /* LaunchScreen.storyboard */; };
+		E93528F62A1D094C00823DF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93528F52A1D094C00823DF3 /* LoginViewController.swift */; };
+		E93528F82A1E4EEA00823DF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E93528F72A1E4EEA00823DF3 /* GoogleService-Info.plist */; };
+		E93528FA2A20972800823DF3 /* FirebaseRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93528F92A20972800823DF3 /* FirebaseRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52D5E35CA865EC01D19FC457 /* Pods_domeLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_domeLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C59001C5B6DE8F177E78CFDE /* Pods-domeLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domeLogin.debug.xcconfig"; path = "Target Support Files/Pods-domeLogin/Pods-domeLogin.debug.xcconfig"; sourceTree = "<group>"; };
+		E6C662AA9B2DD74A0E5EC65F /* Pods-domeLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-domeLogin.release.xcconfig"; path = "Target Support Files/Pods-domeLogin/Pods-domeLogin.release.xcconfig"; sourceTree = "<group>"; };
+		E90E6ABE2A20992A009F008D /* FirebaseLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginViewController.swift; sourceTree = "<group>"; };
+		E90E6AC02A20A6F4009F008D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E90E6AC22A20ABDA009F008D /* Alert + ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert + ViewController.swift"; sourceTree = "<group>"; };
 		E93528D42A1D022900823DF3 /* domeLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domeLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93528D72A1D022900823DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E93528D92A1D022900823DF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E93528DB2A1D022900823DF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E93528DE2A1D022900823DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E93528E02A1D022A00823DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E93528E32A1D022A00823DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E93528E52A1D022A00823DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E93528EB2A1D039600823DF3 /* domeLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = domeLogin.entitlements; sourceTree = "<group>"; };
+		E93528F52A1D094C00823DF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E93528F72A1E4EEA00823DF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E93528F92A20972800823DF3 /* FirebaseRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90E6AC62A219D7E009F008D /* FacebookLogin in Frameworks */,
+				48723A3DEF0FB894A0390110 /* Pods_domeLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		990AB2EECFB9CD640B4A7192 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C59001C5B6DE8F177E78CFDE /* Pods-domeLogin.debug.xcconfig */,
+				E6C662AA9B2DD74A0E5EC65F /* Pods-domeLogin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A41E587F0CB88319CE550DA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52D5E35CA865EC01D19FC457 /* Pods_domeLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E93528CB2A1D022900823DF3 = {
 			isa = PBXGroup;
 			children = (
 				E93528D62A1D022900823DF3 /* domeLogin */,
 				E93528D52A1D022900823DF3 /* Products */,
+				990AB2EECFB9CD640B4A7192 /* Pods */,
+				A41E587F0CB88319CE550DA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +93,19 @@
 		E93528D62A1D022900823DF3 /* domeLogin */ = {
 			isa = PBXGroup;
 			children = (
+				E93528EB2A1D039600823DF3 /* domeLogin.entitlements */,
 				E93528D72A1D022900823DF3 /* AppDelegate.swift */,
 				E93528D92A1D022900823DF3 /* SceneDelegate.swift */,
-				E93528DB2A1D022900823DF3 /* ViewController.swift */,
 				E93528DD2A1D022900823DF3 /* Main.storyboard */,
+				E90E6ABE2A20992A009F008D /* FirebaseLoginViewController.swift */,
+				E90E6AC22A20ABDA009F008D /* Alert + ViewController.swift */,
+				E93528F92A20972800823DF3 /* FirebaseRegisterViewController.swift */,
+				E93528F52A1D094C00823DF3 /* LoginViewController.swift */,
+				E90E6AC02A20A6F4009F008D /* Login.swift */,
 				E93528E02A1D022A00823DF3 /* Assets.xcassets */,
 				E93528E22A1D022A00823DF3 /* LaunchScreen.storyboard */,
 				E93528E52A1D022A00823DF3 /* Info.plist */,
+				E93528F72A1E4EEA00823DF3 /* GoogleService-Info.plist */,
 			);
 			path = domeLogin;
 			sourceTree = "<group>";
@@ -74,15 +117,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E93528E82A1D022A00823DF3 /* Build configuration list for PBXNativeTarget "domeLogin" */;
 			buildPhases = (
+				1D6AE445043B2FEE86E92D25 /* [CP] Check Pods Manifest.lock */,
 				E93528D02A1D022900823DF3 /* Sources */,
 				E93528D12A1D022900823DF3 /* Frameworks */,
 				E93528D22A1D022900823DF3 /* Resources */,
+				8C206C994DA480AA2ADF6466 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = domeLogin;
+			packageProductDependencies = (
+				E90E6AC52A219D7E009F008D /* FacebookLogin */,
+			);
 			productName = domeLogin;
 			productReference = E93528D42A1D022900823DF3 /* domeLogin.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +159,9 @@
 				Base,
 			);
 			mainGroup = E93528CB2A1D022900823DF3;
+			packageReferences = (
+				E90E6AC42A219D7E009F008D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = E93528D52A1D022900823DF3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E93528E42A1D022A00823DF3 /* LaunchScreen.storyboard in Resources */,
+				E93528F82A1E4EEA00823DF3 /* GoogleService-Info.plist in Resources */,
 				E93528E12A1D022A00823DF3 /* Assets.xcassets in Resources */,
 				E93528DF2A1D022900823DF3 /* Main.storyboard in Resources */,
 			);
@@ -133,13 +185,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D6AE445043B2FEE86E92D25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-domeLogin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C206C994DA480AA2ADF6466 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-domeLogin/Pods-domeLogin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-domeLogin/Pods-domeLogin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-domeLogin/Pods-domeLogin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E93528D02A1D022900823DF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93528DC2A1D022900823DF3 /* ViewController.swift in Sources */,
+				E93528F62A1D094C00823DF3 /* LoginViewController.swift in Sources */,
+				E90E6AC32A20ABDA009F008D /* Alert + ViewController.swift in Sources */,
+				E93528FA2A20972800823DF3 /* FirebaseRegisterViewController.swift in Sources */,
+				E90E6AC12A20A6F4009F008D /* Login.swift in Sources */,
 				E93528D82A1D022900823DF3 /* AppDelegate.swift in Sources */,
+				E90E6ABF2A20992A009F008D /* FirebaseLoginViewController.swift in Sources */,
 				E93528DA2A1D022900823DF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +380,11 @@
 		};
 		E93528E92A1D022A00823DF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C59001C5B6DE8F177E78CFDE /* Pods-domeLogin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = domeLogin/domeLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HMDHM6A3PV;
@@ -293,8 +393,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,9 +412,11 @@
 		};
 		E93528EA2A1D022A00823DF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C662AA9B2DD74A0E5EC65F /* Pods-domeLogin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = domeLogin/domeLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HMDHM6A3PV;
@@ -321,8 +425,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +464,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E90E6AC42A219D7E009F008D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E90E6AC52A219D7E009F008D /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90E6AC42A219D7E009F008D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E93528CC2A1D022900823DF3 /* Project object */;
 }
