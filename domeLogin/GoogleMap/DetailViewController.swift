@@ -12,9 +12,8 @@ class DetailViewController: UIViewController {
 
 
     var photoCollection: UICollectionView!
-    let DescriptionLabel = UILabel()
     var reviewsTable: UITableView!
-    
+    let DescriptionLabel = UILabel()
     var mapInfos: MapInfo?
     var photo: [Photo]?
     var reviews: [Reviews]?
