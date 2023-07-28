@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         googleMapTableViewController.tabBarItem = UITabBarItem(title: "GoogleMap", image: UIImage(systemName: "map"), selectedImage: nil)
         
         
-        tabBarController.viewControllers = [firstNavigationController,secondNavigationController,thirdNavigationController,fourthNavigationController]
+        tabBarController.viewControllers = [secondNavigationController,thirdNavigationController,fourthNavigationController,firstNavigationController]
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
