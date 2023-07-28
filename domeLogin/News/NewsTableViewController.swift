@@ -14,18 +14,36 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        GetArticles.share.getArt { result in
-            switch result {
-            case .success(let art):
-                self.articles = art
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            case .failure(let error):
+        
+        // 註冊自訂的 table view cell
+        DispatchQueue.main.async {
+            
+            self.tableView.rowHeight = 120
+            self.tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "NewsTableViewCell")
+            
+            GetArticles.share.getArt { result in
+                switch result {
+                case .success(let art):
+                    self.articles = art
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
                     print(error)
+                }
+                let gradientLayer = CAGradientLayer()
+                gradientLayer.frame = self.view.bounds
+                gradientLayer.colors = [
+                    UIColor(red: 0.949, green: 0.855, blue: 0.396, alpha: 1).cgColor,
+                    UIColor(red: 0.933, green: 0.855, blue: 0.396, alpha: 1).cgColor,
+                    UIColor(red: 0.878, green: 0.651, blue: 0.467, alpha: 1).cgColor,
+                    UIColor(red: 0.776, green: 0.784, blue: 0.694, alpha: 1).cgColor
+                ]
+                let backgroundView = UIView(frame: self.tableView.bounds)
+                backgroundView.layer.addSublayer(gradientLayer)
+                self.tableView.backgroundView = backgroundView
+                
             }
-
         }
     }
 

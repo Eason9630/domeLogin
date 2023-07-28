@@ -27,6 +27,10 @@
 	<string>8c6e60ab2cb892bbeb83b433969e87da</string>
 	<key>FacebookDisplayName</key>
 	<string>domeLogin</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>please allow get location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>please allow get location</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -45,8 +49,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>

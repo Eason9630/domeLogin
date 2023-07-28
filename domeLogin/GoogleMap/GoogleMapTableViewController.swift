@@ -7,24 +7,39 @@
 
 import UIKit
 import CoreLocation
+import SnapKit
 
 class GoogleMapTableViewController: UITableViewController,CLLocationManagerDelegate {
     
     
-    var locationManager: CLLocationManager!
+    private var locationManager: CLLocationManager!
     
     var mapInfo = [MapInfo]()
-    
-    @IBOutlet weak var selectBar: UISearchBar!
+  
     
     let loadingView = UIView()
     let activityIndicator = UIActivityIndicatorView()
     let loadingLabel = UILabel()
+
+    
+    func addSearchBar() {
+            let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 44))
+            tableView.tableHeaderView = searchBar
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectBar.delegate = self
+        
+        tableView.rowHeight = 130
+        tableView.register(GoogleMapTableViewCell.self, forCellReuseIdentifier: "GoogleMapTableViewCell")
+        
+        addSearchBar()
+        
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // 初始化定位管理器
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -34,6 +49,8 @@ class GoogleMapTableViewController: UITableViewController,CLLocationManagerDeleg
         setActivityIndicatorView()
         hideActivityIndicatorView()
     }
+
+    
     
     // 請求定位權限的回調方法
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -98,10 +115,11 @@ class GoogleMapTableViewController: UITableViewController,CLLocationManagerDeleg
      
          let mapInfo = mapInfo[indexPath.row]
      // Configure the cell...
+
          cell.nameLabel.text = mapInfo.name
          cell.DetailLabel.text = mapInfo.vicinity
          cell.iconImage.image = UIImage(systemName: "photo")
-         
+
          GoogleMap.shared.getPhoto(photo_reference: mapInfo.photos[0].photo_reference) { image in
              if let image = image {
                  DispatchQueue.main.async {
@@ -114,14 +132,19 @@ class GoogleMapTableViewController: UITableViewController,CLLocationManagerDeleg
      return cell
      }
      
-    
-    @IBSegueAction func showDetail(_ coder: NSCoder) -> DetailViewController? {
-        guard let controller =  DetailViewController(coder: coder) else {return nil}
-        guard let row = tableView.indexPathForSelectedRow?.row else {return nil}
-        controller.mapInfos = mapInfo[row]
-        
-        return controller
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("HELLOO")
+        guard let controller = DetailViewController() as? DetailViewController else {
+            print("I'm die")
+            return
+            
+        }
+        controller.mapInfos = mapInfo[indexPath.row]
+        print(mapInfo[indexPath.row])
+        navigationController?.pushViewController(controller, animated: true)
     }
+    
+
     
     /*
      // Override to support conditional editing of the table view.

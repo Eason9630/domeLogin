@@ -9,44 +9,210 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController ,CLLocationManagerDelegate{
-
-
-    @IBOutlet weak var dustrictName: UILabel!
     
-    @IBOutlet weak var derscribetion: UILabel!
-    
-    @IBOutlet weak var weatherImage: UIImageView!
-    
-    @IBOutlet weak var temp: UILabel!
-    
-    @IBOutlet weak var humidity: UILabel!
-    
-    @IBOutlet weak var feelTemp: UILabel!
-    @IBOutlet weak var maxTemp: UILabel!
-    @IBOutlet weak var minTemp: UILabel!
-    
-    var locationManager: CLLocationManager!
+    let dustrictName = UILabel()
+    let derscribetion = UILabel()
+    let weatherImage = UIImageView()
+    let temp = UILabel()
+    let humidity = UILabel()
+    let feelTemp = UILabel()
+    let maxTemp = UILabel()
+    let minTemp = UILabel()
     
     var weatherModel: WeatherModel?
     
+    var locationManager: CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 初始化定位管理器
         locationManager = CLLocationManager()
-        locationManager.delegate = self
+        locationManager?.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+
         
-        // 請求定位權限
-        locationManager.requestWhenInUseAuthorization()
+        // name
+        dustrictName.font = UIFont.systemFont(ofSize: 20)
+        dustrictName.textColor = .black
+        view.addSubview(dustrictName)
+        dustrictName.translatesAutoresizingMaskIntoConstraints = false
         
+        dustrictName.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
+            make.centerX.equalTo(view)
+        }
+        //天氣描述
+        derscribetion.font = UIFont.systemFont(ofSize: 20)
+        derscribetion.textColor = .black
+        view.addSubview(derscribetion)
+        derscribetion.translatesAutoresizingMaskIntoConstraints = false
+        
+        derscribetion.snp.makeConstraints { make in
+            make.top.equalTo(dustrictName.snp_bottom).offset(20)
+            make.centerX.equalTo(view)
+        }
+        //圖片
+        weatherImage.image = UIImage(systemName: "photo")
+        view.addSubview(weatherImage)
+        weatherImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        weatherImage.snp.makeConstraints { make in
+            make.top.equalTo(derscribetion.snp_bottom).offset(30)
+            make.centerX.equalTo(view)
+            make.width.equalTo(180)
+            make.height.equalTo(100)
+        }
+        //溫度
+        let tempLabel = UILabel()
+        tempLabel.text = "溫度:"
+        tempLabel.textColor = .black
+        tempLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(tempLabel)
+        tempLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        tempLabel.snp.makeConstraints { make in
+            make.top.equalTo(weatherImage.snp_bottom).offset(40)
+            make.left.equalToSuperview().offset(40)
+            make.width.equalTo(100)
+        }
+        temp.font = UIFont.systemFont(ofSize: 20)
+        temp.textColor = .black
+        view.addSubview(temp)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        
+        temp.snp.makeConstraints { make in
+            make.top.equalTo(weatherImage.snp_bottom).offset(40)
+            make.leading.equalTo(tempLabel.snp_trailing).offset(30)
+        }
+        //最高溫度
+        let maxTempLabel = UILabel()
+        maxTempLabel.text = "最高溫度:"
+        maxTempLabel.textColor = .black
+        maxTempLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(maxTempLabel)
+        maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        maxTempLabel.snp.makeConstraints { make in
+            make.top.equalTo(tempLabel.snp_bottom).offset(40)
+            make.leading.equalTo(view.snp_leading).offset(40)
+            make.width.equalTo(100)
+        }
+        maxTemp.font = UIFont.systemFont(ofSize: 20)
+        maxTemp.textColor = .black
+        view.addSubview(maxTemp)
+        maxTemp.translatesAutoresizingMaskIntoConstraints = false
+        
+        maxTemp.snp.makeConstraints { make in
+            make.top.equalTo(temp.snp_bottom).offset(40)
+            make.leading.equalTo(maxTempLabel.snp_trailing).offset(30)
+        }
+        //最低溫度
+        let minTempLabel = UILabel()
+        minTempLabel.text = "最低溫度:"
+        minTempLabel.textColor = .black
+        minTempLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(minTempLabel)
+        minTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        minTempLabel.snp.makeConstraints { make in
+            make.top.equalTo(maxTempLabel.snp_bottom).offset(40)
+            make.leading.equalTo(view.snp_leading).offset(40)
+            make.width.equalTo(100)
+        }
+        minTemp.font = UIFont.systemFont(ofSize: 20)
+        minTemp.textColor = .black
+        view.addSubview(minTemp)
+        minTemp.translatesAutoresizingMaskIntoConstraints = false
+        
+        minTemp.snp.makeConstraints { make in
+            make.top.equalTo(maxTemp.snp_bottom).offset(40)
+            make.leading.equalTo(minTempLabel.snp_trailing).offset(30)
+        }
+        //濕度
+        let humidityLabel = UILabel()
+        humidityLabel.text = "濕度:"
+        humidityLabel.textColor = .black
+        humidityLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(humidityLabel)
+        humidityLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        humidityLabel.snp.makeConstraints { make in
+            make.top.equalTo(minTempLabel.snp_bottom).offset(40)
+            make.leading.equalTo(view.snp_leading).offset(40)
+            make.width.equalTo(100)
+        }
+        humidity.font = UIFont.systemFont(ofSize: 20)
+        humidity.textColor = .black
+        view.addSubview(humidity)
+        humidity.translatesAutoresizingMaskIntoConstraints = false
+        
+        humidity.snp.makeConstraints { make in
+            make.top.equalTo(minTemp.snp_bottom).offset(40)
+            make.leading.equalTo(humidityLabel.snp_trailing).offset(30)
+        }
+        //體感溫度
+        let feelTempLabel = UILabel()
+        feelTempLabel.text = "體感溫度:"
+        feelTempLabel.textColor = .black
+        feelTempLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(feelTempLabel)
+        feelTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        feelTempLabel.snp.makeConstraints { make in
+            make.top.equalTo(humidityLabel.snp_bottom).offset(40)
+            make.leading.equalTo(view.snp_leading).offset(40)
+            make.width.equalTo(100)
+        }
+        feelTemp.font = UIFont.systemFont(ofSize: 20)
+        feelTemp.textColor = .black
+        view.addSubview(feelTemp)
+        feelTemp.translatesAutoresizingMaskIntoConstraints = false
+        
+        feelTemp.snp.makeConstraints { make in
+            make.top.equalTo(humidity.snp_bottom).offset(40)
+            make.leading.equalTo(feelTempLabel.snp_trailing).offset(30)
+        }
+        
+       
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+          gradientLayer.colors = [
+            UIColor(red: 0.949, green: 0.855, blue: 0.396, alpha: 1).cgColor,
+            UIColor(red: 0.933, green: 0.855, blue: 0.396, alpha: 1).cgColor,
+            UIColor(red: 0.878, green: 0.651, blue: 0.467, alpha: 1).cgColor,
+            UIColor(red: 0.776, green: 0.784, blue: 0.694, alpha: 1).cgColor
+          ]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        requestLocationPermission()
+    }
+    
+    
+    private func requestLocationPermission() {
+            locationManager = CLLocationManager()
+            locationManager?.delegate = self
+
+            // 請求定位權限
+            locationManager?.requestWhenInUseAuthorization()
+        }
     
     // 請求定位權限的回調方法
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            // 開始定位更新
-            locationManager.startUpdatingLocation()
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager?.requestWhenInUseAuthorization() // First time lanch app need to get authorize from user
+          fallthrough
+        case .authorizedWhenInUse:
+            locationManager?.startUpdatingLocation() // Start location
+        case .denied:
+          let alertController = UIAlertController(title: "定位權限已關閉", message:"如要變更權限，請至 設定 > 隱私權 > 定位服務 開啟", preferredStyle: .alert)
+          let okAction = UIAlertAction(title: "確認", style: .default, handler:nil)
+          alertController.addAction(okAction)
+          self.present(alertController, animated: true, completion: nil)
+        default:
+          break
         }
     }
     
@@ -78,7 +244,7 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate{
             }
             
             // 獲取到所需的位置資訊後，停止定位更新
-            locationManager.stopUpdatingLocation()
+            locationManager?.stopUpdatingLocation()
         }
     }
     
@@ -115,28 +281,16 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate{
                     self.humidity.text = "\(weather.main.humidity)%"
                     self.feelTemp.text = "\(weather.main.feels_like)℃ "
                     
-                    if (suffix == "n") {
-                        self.view.backgroundColor = UIColor(red: 11/255, green: 72/255, blue: 108/255, alpha: 1)
-                       self.changeLabelColorsIn(view: self.view, suffix: "n")
+                    if suffix == "n" {
+                        self.view.backgroundColor = UIColor.blue
                     }else{
-                        self.view.backgroundColor = UIColor(red: 36/255, green: 186/255, blue: 224/255, alpha: 1)
-                        self.changeLabelColorsIn(view: self.view, suffix: "d")
-                        }
+                        self.view.backgroundColor = UIColor.lightGray
+                    }
+
                     }
                 }
         }.resume()
     }
-    
-    func changeLabelColorsIn(view: UIView, suffix: String) {
-        for subview in view.subviews {
-            if let label = subview as? UILabel {
-                if let text = label.text, text.hasSuffix(suffix) {
-                    label.textColor = (suffix == "n") ? UIColor.white : UIColor.black
-                }
-            } else {
-                changeLabelColorsIn(view: subview, suffix: suffix)
-            }
-        }
-    }
+
     
 }
