@@ -227,7 +227,7 @@ class LoginViewController: UIViewController {
                     return
                  }
                 if let user = result?.user{
-                    guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(FirebaseLoginViewController.self)") as? FirebaseLoginViewController else {return}
+                    guard let controller =  FirebaseLoginViewController() as? FirebaseLoginViewController else {return}
                     controller.user = user
                     self.navigationController?.pushViewController(controller, animated: true)
                 }
